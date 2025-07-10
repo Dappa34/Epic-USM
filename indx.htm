@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPIC USM - English Proficiency Improvement Community</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Montserrat for titles, Inter for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* -------------------------------------- */
+        /* Global Variables & Base Styles         */
+        /* -------------------------------------- */
+        :root {
+            --primary-color: #FF8C42; /* Warm Orange */
+            --secondary-color: #4F8C58; /* Elegant Dark Green */
+            --text-dark: #2c3e50; /* Soft Dark Text */
+            --text-light: #555; /* Gray text for paragraphs */
+            --background-light: #fdfdff; /* Very Light Background */
+            --background-gray: #f2f4f8; /* Soft Gray Background */
+            --card-bg: #FFFFFF; /* Clean White for Cards */
+            --border-radius-sm: 6px;
+            --border-radius-md: 12px;
+            --box-shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft Shadow */
+            --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15); /* Slightly Stronger Shadow on Hover */
+            --transition-speed: 0.3s ease-out;
+            --gradient-primary-secondary: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter as the main font */
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            color: var(--text-light);
+            background-color: var(--background-light);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            margin-top: 0;
+            line-height: 1.3;
+        }
+
+        h1 { font-size: 2.8em; }
+        h2 { font-size: 2.2em; }
+        h3 { font-size: 1.8em; }
+        h4 { font-size: 1.4em; }
+        h5 { font-size: 1.1em; }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: var(--border-radius-md);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95em;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color var(--transition-speed), transform 0.2s ease-out, box-shadow var(--transition-speed);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(255, 140, 66, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #e67533;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 140, 66, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(79, 140, 88, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: #3f7047;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(79, 140, 88, 0.4);
+        }
+
+        /* -------------------------------------- */
+        /* Header Section                         */
+        /* -------------------------------------- */
+        header {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 15px 0;
+            box-shadow: var(--box-shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.9em;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        header nav a {
+            color: #fff;
+            font-weight: 600;
+            padding: 8px 0;
+            position: relative;
+            opacity: 0.9;
+            transition: opacity var(--transition-speed);
+        }
+
+        header nav a:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+        header nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width var(--transition-speed);
+        }
+        header nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: var(--border-radius-md);
+            padding: 8px 15px;
+            transition: background-color var(--transition-speed);
+        }
+
+        .search-bar:focus-within {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            color: #fff;
+            outline: none;
+            padding: 0;
+            width: 180px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-bar input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-left: 10px;
+            transition: color var(--transition-speed);
+        }
+
+        .search-bar button:hover {
+            color: var(--primary-color);
+        }
+
+        .user-profile .btn {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background: none;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .user-profile .btn:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        
+
+        /* -------------------------------------- */
+        /* Hero Section                           */
+        /* -------------------------------------- */
+        .hero-section {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('foto2.jpg'); /* Ganti dengan URL gambar kamu */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 140px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 550px;
+
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-content .category-tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.85em;
+            margin-bottom: 20px;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .hero-content h1 {
+            font-size: 3.8em;
+            margin-bottom: 25px;
+            color: #fff;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            opacity: 0.9;
+        }
+
+        /* -------------------------------------- */
+        /* Section Styling General                */
+        /* -------------------------------------- */
+        section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--background-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-size: 2.8em;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        .section-header p {
+            max-width: 700px;
+            margin: 20px auto 0 auto;
+            font-size: 1.1em;
+            color: var(--text-light);
+        }
+
+        /* -------------------------------------- */
+        /* Recent Activities Section              */
+        /* -------------------------------------- */
+        .recent-activities {
+            background-color: var(--background-gray);
+            background-image: url('https://i.ibb.co/0jFLpMdv/foto1.jpg'); /* Ganti dengan URL gambar kamu */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 1;
+        }
+
+        .activity-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .activity-item {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--box-shadow-light);
+            transition: transform 0.3s ease, box-shadow var(--transition-speed);
+        }
+        .activity-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .activity-item .meta {
+            font-size: 0.88em;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
+        .activity-item h4 {
+            font-size: 1.25em;
+            margin-bottom: 0;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* -------------------------------------- */
+        /* Stay Connected Section                 */
+        /* -------------------------------------- */
+        .stay-connected-section {
+            background: var(--gradient-primary-secondary);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stay-connected-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            max-width: 1000px;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .newsletter-text {
+            flex: 1;
+            text-align: left;
+            min-width: 300px;
+        }
+
+        .newsletter-text h2 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+
+        .newsletter-text p {
+            font-size: 1.05em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1 1 250px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 14px 22px;
+            border-radius: var(--border-radius-md);
+            outline: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            transition: border-color var(--transition-speed), background-color var(--transition-speed);
+        }
+
+        .newsletter-form input:focus {
+            border-color: #fff;
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .newsletter-form .btn-secondary {
+            padding: 12px 25px;
+            box-shadow: none;
+        }
+        .newsletter-form .btn-secondary:hover {
+            box-shadow: none;
+        }
+
+        .newsletter-image {
+            flex: 1;
+            text-align: right;
+            min-width: 300px;
+        }
+
+        .newsletter-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        /* -------------------------------------- */
+        /* Featured Event / Blog Section          */
+        /* -------------------------------------- */
+        .featured-section {
+            background-color: var(--background-light);
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .main-content-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--box-shadow-light);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow var(--transition-speed);
+            cursor: pointer;
+        }
+        .main-content-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .main-content-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .main-content-content {
+            padding: 30px;
+        }
+
+        .main-content-content .meta {
+            font-size: 0.88em;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
+        .main-content-content .category-tag-small {
+            background-color: var(--background-gray);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .main-content-content h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+        .main-content-content p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .main-content-content .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .main-content-content .read-more:hover {
+            text-decoration: underline;
+        }
+
+
+        .sidebar {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--box-shadow-light);
+            padding: 30px;
+        }
+
+        /* About EPIC USM / Meet Our Team */
+        .about-ukm-info {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--background-gray);
+        }
+
+        .about-ukm-info img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 0 0 5px rgba(255, 140, 66, 0.1);
+        }
+
+        .about-ukm-info h4 {
+            margin-bottom: 8px;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+
+        .about-ukm-info p {
+            font-size: 0.95em;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .about-ukm-info .social-links {
+            margin-top: 15px;
+        }
+
+        .about-ukm-info .social-links a {
+            font-size: 1.4em;
+            margin: 0 10px;
+            color: var(--text-light);
+            transition: color var(--transition-speed), transform 0.2s ease-out;
+        }
+
+        .about-ukm-info .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Upcoming Events / Past Achievements */
+        .ukm-updates-sidebar {
+            margin-top: 20px;
+            padding-top: 20px;
+        }
+
+        .ukm-updates-sidebar h5 {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .ukm-updates-sidebar ul li {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--background-gray);
+        }
+        .ukm-updates-sidebar ul li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .ukm-updates-sidebar ul li a {
+            display: block;
+            font-size: 0.95em;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color var(--transition-speed);
+        }
+
+        .ukm-updates-sidebar ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .ukm-updates-sidebar .meta {
+            font-size: 0.85em;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+
+        /* -------------------------------------- */
+        /* EPIC AI Prompter Section (New/Updated) */
+        /* -------------------------------------- */
+        .ai-prompter-section { /* Changed class name */
+            background-color: var(--card-bg); /* Mengubah ke warna putih */
+            color: var(--text-dark); /* Mengubah warna teks agar terlihat di latar putih */
+            padding: 80px 0;
+        }
+
+        .ai-prompter-content { /* Changed class name */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .ai-prompter-content h2 { /* Changed class name */
+            color: var(--text-dark); /* Mengubah warna judul agar terlihat di latar putih */
+            margin-bottom: 20px;
+        }
+
+        .ai-prompter-content p { /* Changed class name */
+            max-width: 700px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-size: 1.1em;
+            color: var(--text-light); /* Mengubah warna paragraf agar terlihat di latar putih */
+        }
+
+        .prompter-input-area { /* Changed class name */
+            width: 80%;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .prompter-input-area textarea { /* Changed class name */
+            width: 100%;
+            padding: 18px;
+            border-radius: var(--border-radius-md);
+            border: 1px solid var(--background-gray); /* Border lebih lembut */
+            background-color: var(--background-light); /* Background transparan */
+            color: var(--text-dark); /* Warna teks input */
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1em;
+            resize: vertical;
+            min-height: 120px;
+            outline: none;
+            box-shadow: var(--box-shadow-light);
+            transition: border-color var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed);
+        }
+
+        .prompter-input-area textarea::placeholder { /* Changed class name */
+            color: var(--text-light);
+        }
+
+        .prompter-input-area textarea:focus { /* Changed class name */
+            border-color: var(--primary-color);
+            background-color: var(--card-bg);
+            box-shadow: 0 0 0 4px rgba(255, 140, 66, 0.25);
+        }
+
+        #sendPrompterBtn { /* Changed ID */
+            margin-top: 0;
+            background-color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(255, 140, 66, 0.3);
+            display: flex; /* Untuk menata teks dan spinner */
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #sendPrompterBtn:hover { /* Changed ID */
+            background-color: #e67533;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 140, 66, 0.4);
+        }
+
+        .loading-spinner { /* Spinner umum, digunakan juga di sini */
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            width: 24px; /* Ukuran lebih kecil untuk tombol */
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: none; /* Hidden by default */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .ai-response-area {
+            background-color: var(--card-bg);
+            color: var(--text-dark);
+            padding: 30px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--box-shadow-light);
+            margin-top: 40px;
+            width: 80%;
+            max-width: 800px;
+            text-align: left;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            font-size: 1.05em;
+            line-height: 1.8;
+            opacity: 0; /* Hidden by default */
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease-out, border 0.3s ease-out;
+            border: 1px solid transparent; /* Add transparent border for transition */
+        }
+
+        .ai-response-area.active {
+            opacity: 1;
+            transform: translateY(0);
+            border: 1px solid var(--primary-color); /* Border primary color when active */
+            box-shadow: 0 8px 20px rgba(255, 140, 66, 0.2); /* Stronger shadow with primary color */
+        }
+
+
+        /* -------------------------------------- */
+        /* Footer Section                         */
+        /* -------------------------------------- */
+        footer {
+            background-color: var(--secondary-color);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        /* New Contact Section Styles */
+        .contact-section {
+            background-color: var(--background-gray); /* Or another suitable background */
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+        .contact-item {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--box-shadow-light);
+            transition: transform 0.3s ease, box-shadow var(--transition-speed);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .contact-item i {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-item h4 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .contact-item p {
+            font-size: 1em;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .footer-social-links a {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.3em;
+            margin-left: 20px;
+            transition: color var(--transition-speed), transform 0.2s ease-out;
+        }
+
+        .footer-social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* -------------------------------------- */
+        /* POP-UP MODAL STYLES                    */
+        /* -------------------------------------- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 50px;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            transform: scale(0.7) translateY(50px);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.4s ease-out;
+            position: relative;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+
+        .modal-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        .modal-content p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.7;
+            font-size: 1.05em;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.8em;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: color var(--transition-speed);
+        }
+
+        .modal-close-btn:hover {
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+
+        .modal-content .btn {
+            padding: 14px 30px;
+        }
+
+        /* Registration Modal Specific Styles - Minimized for readability */
+        #registrationModal .modal-content {
+            text-align: left;
+            max-width: 380px; /* Reduced max-width */
+            padding: 20px; /* Reduced padding */
+        }
+
+        #registrationModal .modal-content h3 {
+            font-size: 1.4em; /* Slightly reduced font size */
+            margin-bottom: 10px; /* Reduced margin */
+        }
+
+        #registrationModal .modal-content p {
+            font-size: 0.85em; /* Slightly reduced font size */
+            margin-bottom: 15px; /* Reduced margin */
+        }
+
+        #registrationModal .form-group {
+            margin-bottom: 10px; /* Reduced margin between form groups */
+        }
+
+        #registrationModal label {
+            margin-bottom: 3px; /* Reduced margin below labels */
+            font-weight: 600; /* Ensure label is bold */
+            color: var(--text-dark); /* Ensure label color is dark */
+            font-family: 'Montserrat', sans-serif; /* Ensure font family is Montserrat */
+            font-size: 0.8em; /* Slightly reduced font size */
+        }
+
+        #registrationModal input[type="text"],
+        #registrationModal input[type="email"],
+        #registrationModal input[type="tel"],
+        #registrationModal select,
+        #registrationModal textarea {
+            width: calc(100% - 16px);
+            padding: 6px; /* Reduced padding */
+            font-size: 0.85em; /* Slightly reduced font size */
+            border: 1px solid var(--background-gray); /* Ensure border is visible */
+            border-radius: var(--border-radius-sm); /* Ensure rounded corners */
+            font-family: 'Inter', sans-serif; /* Ensure font family is Inter */
+            color: var(--text-dark); /* Ensure text color is dark */
+            background-color: var(--background-light); /* Ensure background is light */
+        }
+
+        #registrationModal textarea {
+            min-height: 60px; /* Reduced min-height */
+        }
+
+        #registrationModal .btn-primary {
+            width: auto;
+            margin-top: 15px;
+            padding: 8px 18px; /* Reduced padding for button */
+            font-size: 0.8em; /* Slightly reduced font size for button */
+            display: block; /* Ensure button takes full width if needed */
+            text-align: center; /* Center text in button */
+            /* Added visual emphasis for clickable button */
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 4px 10px rgba(255, 140, 66, 0.3);
+            transition: background-color var(--transition-speed), transform 0.2s ease-out, box-shadow var(--transition-speed);
+            border: none;
+        }
+
+        #registrationModal .btn-primary:hover {
+            background-color: #e67533;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 140, 66, 0.4);
+        }
+
+
+        /* -------------------------------------- */
+        /* Responsive Design                      */
+        /* -------------------------------------- */
+        @media (max-width: 992px) {
+            .container {
+                padding: 20px;
+            }
+            h1 { font-size: 2.4em; }
+            h2 { font-size: 2em; }
+            h3 { font-size: 1.6em; }
+
+            .hero-section {
+                padding: 100px 20px;
+                min-height: 450px;
+            }
+            .hero-content h1 {
+                font-size: 3em;
+            }
+
+            .activity-list, .featured-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            .main-content-card img {
+                height: 220px;
+            }
+
+            .prompter-input-area, .ai-response-area { /* Updated class name */
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+            .logo img {
+                height: 35px;
+            }
+
+            header nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .search-bar {
+                width: 90%;
+                margin: 0 auto;
+                justify-content: center;
+            }
+            .search-bar input {
+                width: 100%;
+            }
+
+            .user-profile {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+            .hero-content p {
+                font-size: 1em;
+            }
+            .hero-section {
+                padding: 80px 15px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+            .section-header {
+                margin-bottom: 40px;
+            }
+            .section-header h2 {
+                font-size: 2.2em;
+            }
+
+            .stay-connected-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .newsletter-text {
+                text-align: center;
+            }
+            .newsletter-form {
+                justify-content: center;
+                width: 100%;
+            }
+            .newsletter-form input {
+                flex: 1 1 100%;
+            }
+
+            .newsletter-image {
+                text-align: center;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                margin-top: 30px;
+            }
+
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            footer .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .footer-social-links {
+                margin-left: 0;
+            }
+            .footer-social-links a {
+                margin: 0 10px;
+            }
+
+            .modal-content {
+                max-width: 90%;
+                padding: 25px;
+            }
+            .modal-content h3 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.4em; }
+
+            .hero-content h1 {
+                font-size: 2em;
+            }
+            .hero-content p {
+                font-size: 0.95em;
+            }
+
+            .search-bar input {
+                width: 120px;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+
+            .activity-item {
+                padding: 20px;
+            }
+            .activity-item h4 {
+                font-size: 1.1em;
+            }
+
+            .main-content-content {
+                padding: 20px;
+            }
+            .main-content-content h3 {
+                font-size: 1.3em;
+            }
+            .main-content-card img {
+                height: 180px;
+            }
+
+            .ai-prompter-content h2 {
+                font-size: 1.8em;
+            }
+            .ai-prompter-content p {
+                font-size: 0.95em;
+            }
+            .prompter-input-area textarea {
+                min-height: 100px;
+                padding: 15px;
+                font-size: 1em;
+            }
+            .ai-response-area {
+                padding: 20px;
+                font-size: 0.95em;
+            }
+
+            #registrationModal .modal-content {
+                padding: 15px; /* Further reduced padding for very small screens */
+            }
+            #registrationModal .modal-content h3 {
+                font-size: 1.2em;
+            }
+            #registrationModal .modal-content p {
+                font-size: 0.8em;
+            }
+            #registrationModal label {
+                font-size: 0.75em;
+            }
+            #registrationModal input[type="text"],
+            #registrationModal input[type="email"],
+            #registrationModal input[type="tel"],
+            #registrationModal select,
+            #registrationModal textarea {
+                font-size: 0.8em;
+                padding: 5px;
+            }
+            #registrationModal .btn-primary {
+                font-size: 0.75em;
+                padding: 7px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <img src="logo epic.png" onerror="this.onerror=null; this.src='https://placehold.co/40x40/FF8C42/FFFFFF?text=EP';" alt="EPIC USM Logo">
+                EPIC USM
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#activities">Activities</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="#ai-prompter">AI Prompter</a></li>
+                    <li><a href="#contact-section">Contact</a></li> <!-- Updated href to new contact section ID -->
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="user-profile">
+                <button class="btn" id="openRegistrationModalBtn">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <!-- <img src="foto2.jpg" alt="EPIC Group" style="max-width:100%;border-radius:18px;margin-bottom:30px;"> -->
+            <span class="category-tag">Welcome to EPIC USM</span>
+            <h1> Your English UnlockPotential with Us!</h1>
+            <p>Join the English Proficiency Improvement Community (EPIC) at USM and embark on a journey to master the English language through engaging activities, workshops, and a supportive environment.</p>
+            <button class="btn btn-primary" id="learnMoreBtn">Learn More</button>
+        </div>
+    </section>
+
+    <!-- Recent Activities Section -->
+    <section class="recent-activities" id="activities">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recent Activities</h2>
+                <p>Berikut beberapa program kerja (proker) yang pernah dijalankan oleh EPIC USM.</p>
+            </div>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="meta">2025 | Proker</div>
+                    <h4>EPIC Mengajar</h4>
+                    <p>Kegiatan pengabdian masyarakat di mana anggota EPIC USM mengajar bahasa Inggris di sekolah-sekolah atau komunitas sekitar, sebagai bentuk kontribusi nyata untuk pendidikan.</p>
+                    <a href="https://www.instagram.com/reel/DJOKG_eRTuV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="btn btn-secondary" style="margin-top:15px;">
+                        Lihat Dokumentasi Video <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="activity-item">
+                    <div class="meta">2025 | Proker</div>
+                    <h4>EPIC Study Banding ke UDINUS</h4>
+                    <p>Kegiatan study banding ke Universitas Dian Nuswantoro (UDINUS) untuk berbagi pengalaman, memperluas relasi, dan meningkatkan wawasan organisasi bersama UKM sejenis di kampus lain.</p>
+                    <a href="https://www.instagram.com/reel/DLMeKRORseq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="btn btn-secondary" style="margin-top:15px;">
+                        Lihat Dokumentasi Video <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stay Connected Section -->
+    <section class="stay-connected-section">
+        <div class="container stay-connected-content">
+            <div class="newsletter-text">
+                <h2>Media Partner EPIC USM</h2>
+                <p>
+                    Untuk informasi kerja sama media partner, silakan hubungi kontak di bawah ini. Kami terbuka untuk kolaborasi dengan berbagai media, komunitas, maupun organisasi lain.
+                </p>
+                <div class="contact-info-grid" style="margin-top:30px;">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <h4>Cahya</h4>
+                        <p><a href="tel:+6289504502667">+62 895-0450-2667</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <h4>Celo</h4>
+                        <p><a href="tel:+6285641481492">+62 856-4148-1492</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p><a href="mailto:epicusmjaya@gmail.com">epicusmjaya@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div style="flex:1; min-width:320px; max-width:420px; margin-left:40px;">
+                <h3 style="color:#fff; margin-bottom:18px;">Guidebook Media Partner</h3>
+                <a href="Guidebook Media Partner EPIC USM.pdf" class="btn btn-secondary" target="_blank" style="margin-bottom:18px;display:block;">
+                    <i class="fas fa-file-pdf"></i> Download Guidebook (PDF)
+                </a>
+                <iframe src="Guidebook Media Partner EPIC USM.pdf" width="100%" height="400" style="border:1px solid #ccc; border-radius:12px; background:#fff;"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Event / Blog Section -->
+    <section class="featured-section" id="featured">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Insights & Events</h2>
+                <p>Dive deeper into our community with a spotlight on a key event or an insightful blog post.</p>
+            </div>
+            <div class="featured-grid">
+                <div class="main-content-card">
+                    <img src="https://i.imgur.com/high-res-featured-event.jpg" onerror="this.onerror=null; this.src='https://placehold.co/700x400/4F8C58/FFFFFF?text=Featured+Event+Image';" alt="Featured Event">
+                    <div class="main-content-content">
+                        <div class="meta">
+                            <span>July 15, 2025</span>
+                            <span class="category-tag-small">Program Study Banding</span>
+                        </div>
+                        <h3>Study Banding UNWAHAS ke Universitas Semarang</h3>
+                        <p>Pada tanggal 15 Juli 2025, EPIC USM melaksanakan program study banding bersama UNWAHAS ke Universitas Semarang. Kegiatan ini bertujuan untuk memperluas wawasan, mempererat relasi antar organisasi, serta berbagi pengalaman dan inspirasi dalam pengelolaan UKM Bahasa Inggris di lingkungan kampus.</p>
+                        <a href="#" class="read-more">Lihat Dokumentasi <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="about-ukm-info">
+                        <img src="logo epic.png" onerror="this.onerror=null; this.src='https://placehold.co/90x90/2c3e50/FFFFFF?text=EPIC';" alt="EPIC USM Logo">
+                        <h4>About EPIC USM</h4>
+                        <p>EPIC USM is a vibrant community dedicated to fostering English language proficiency among USM students. We believe in learning through interaction, practice, and fun.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/epicusm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="ukm-updates-sidebar">
+                        <h5>Past Achievements</h5>
+                        <ul>
+                            <li>
+                                <a href="#">USM Team Wins National English Olympiad</a>
+                                <div class="meta">October 2024</div>
+                            </li>
+                            <li>
+                                <a href="#">EPIC USM Hosts Successful International Exchange Program</a>
+                                <div class="meta">August 2024</div>
+                            </li>
+                            <li>
+                                <a href="#">Record Participation in English Essay Writing Contest</a>
+                                <div class="meta">April 2024</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EPIC AI Prompter Section -->
+    <section class="ai-prompter-section" id="ai-prompter">
+        <div class="container ai-prompter-content">
+            <h2>EPIC AI Prompter</h2>
+            <p>
+                Tanyakan apa saja tentang EPIC USM, kegiatan, program kerja, atau informasi terbaru tahun 2025! AI Prompter kami siap membantu Anda dengan info seputar event, pendaftaran, media partner, dan aktivitas EPIC USM terkini.
+            </p>
+            <div class="prompter-input-area">
+                <textarea id="prompterInput" placeholder="Contoh: 'Apa saja kegiatan EPIC USM di tahun 2025?', 'Bagaimana cara menjadi media partner?', 'Kapan study banding terakhir?'"></textarea>
+                <button class="btn btn-primary" id="sendPrompterBtn">
+                    Hasilkan Jawaban <span class="loading-spinner"></span>
+                </button>
+            </div>
+            <div class="ai-response-area" id="aiResponseArea">
+                Jawaban yang dihasilkan akan muncul di sini.
+            </div>
+        </div>
+    </section>
+
+    <!-- New Contact Section -->
+    <section class="contact-section" id="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hubungi Kami</h2>
+                <p>Jangan ragu untuk menghubungi kami jika Anda memiliki pertanyaan atau ingin bergabung dengan komunitas kami.</p>
+            </div>
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>Cahya</h4>
+                    <p><a href="tel:+6289504502667">+62 895-0450-2667</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>Celo</h4>
+                    <p><a href="tel:+6285641481492">+62 856-4148-1492</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email</h4>
+                    <p><a href="mailto:epicusmjaya@gmail.com">epicusmjaya@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 EPIC USM. All rights reserved.</p>
+            <div class="footer-social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/epicusm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="mailto:epicusmjaya@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- Modals -->
+    <!-- General Info Modal -->
+    <div id="infoModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h3>Welcome to EPIC USM!</h3>
+            <p>We are thrilled to have you here. Explore our activities, join events, and utilize our AI Prompter to boost your English proficiency. Let's learn and grow together!</p>
+            <button class="btn btn-primary modal-close-btn">Got It!</button>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h3>Register for EPIC USM</h3>
+            <p id="registrationMessage">Isi formulir di bawah ini untuk menjadi anggota komunitas kami.</p>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" placeholder="Your Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPhone">Phone Number</label>
+                    <input type="tel" id="regPhone" placeholder="+62 812-3456-7890">
+                </div>
+                <!-- New NIM field -->
+                <div class="form-group">
+                    <label for="regNIM">NIM (Nomor Induk Mahasiswa)</label>
+                    <input type="text" id="regNIM" placeholder="Contoh: C.431.24.0065" required>
+                </div>
+                <!-- Updated Fakultas dan Program Studi field -->
+                <div class="form-group">
+                    <label for="regStudyProgram">Fakultas dan Program Studi USM</label>
+                    <select id="regStudyProgram" required>
+                        <option value="">Pilih Fakultas dan Program Studi</option>
+                        <optgroup label="Fakultas Hukum">
+                            <option value="S1 Ilmu Hukum">S1 Ilmu Hukum</option>
+                        </optgroup>
+                        <optgroup label="Fakultas Ekonomi">
+                            <option value="D3 Manajemen Perusahaan">D3 Manajemen Perusahaan</option>
+                            <option value="S1 Manajemen">S1 Manajemen</option>
+                            <option value="S1 Akuntansi">S1 Akuntansi</option>
+                        </optgroup>
+                        <optgroup label="Fakultas Teknik">
+                            <option value="S1 Teknik Sipil">S1 Teknik Sipil</option>
+                            <option value="S1 Teknik Elektro">S1 Teknik Elektro</option>
+                            <option value="S1 Perencanaan Wilayah & Kota">S1 Perencanaan Wilayah & Kota</option>
+                        </optgroup>
+                        <optgroup label="Fakultas Teknologi Pertanian">
+                            <option value="S1 Teknologi Hasil Pertanian">S1 Teknologi Hasil Pertanian</option>
+                        </optgroup>
+                        <optgroup label="Fakultas Teknologi Informasi & Komunikasi (FTIK)">
+                            <option value="S1 Teknik Informatika">S1 Teknik Informatika</option>
+                            <option value="S1 Sistem Informasi">S1 Sistem Informasi</option>
+                            <option value="S1 Ilmu Komunikasi">S1 Ilmu Komunikasi</option>
+                            <option value="S1 Pariwisata">S1 Pariwisata</option>
+                        </optgroup>
+                        <optgroup label="Fakultas Psikologi">
+                            <option value="S1 Psikologi">S1 Psikologi</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="regInterest">Area of Interest in English</label>
+                    <select id="regInterest">
+                        <option value="">Select an interest</option>
+                        <option value="speaking">Public Speaking</option>
+                        <option value="writing">Academic Writing</n>
+                        <option value="debate">Debate</option>
+                        <option value="grammar">Grammar & Vocabulary</option>
+                        <option value="ielts">IELTS/TOEFL Prep</option>
+                        <option value="casual">Casual Conversation</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="regMessage">Why do you want to join EPIC USM?</label>
+                    <textarea id="regMessage" placeholder="Tell us a bit about yourself..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to open a modal
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+            }
+        }
+
+        // Function to close a modal
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        // Event Listeners for Modals
+        document.addEventListener('DOMContentLoaded', () => {
+            // Open Registration Modal
+            const openRegistrationBtn = document.getElementById('openRegistrationModalBtn');
+            if (openRegistrationBtn) {
+                openRegistrationBtn.addEventListener('click', () => openModal('registrationModal'));
+            }
+
+            // Close buttons for all modals
+            document.querySelectorAll('.modal-close-btn').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const modalOverlay = event.target.closest('.modal-overlay');
+                    if (modalOverlay) {
+                        closeModal(modalOverlay.id);
+                    }
+                });
+            });
+
+            // Close modal when clicking outside the content
+            document.querySelectorAll('.modal-overlay').forEach(overlay => {
+                overlay.addEventListener('click', (event) => {
+                    if (event.target === overlay) {
+                        closeModal(overlay.id);
+                    }
+                });
+            });
+
+            // Handle Learn More button click (opens info modal)
+            const learnMoreBtn = document.getElementById('learnMoreBtn');
+            if (learnMoreBtn) {
+                learnMoreBtn.addEventListener('click', () => openModal('infoModal'));
+            }
+
+            // Handle Registration Form submission
+            const registrationForm = document.getElementById('registrationForm');
+            const registrationMessage = document.getElementById('registrationMessage'); // Get the paragraph for messages
+
+            if (registrationForm) {
+                registrationForm.addEventListener('submit', (event) => {
+                    event.preventDefault(); // Prevent default form submission
+                    // In a real application, you would send this data to a server
+                    console.log('Registration form submitted!');
+                    const formData = {
+                        name: document.getElementById('regName').value,
+                        email: document.getElementById('regEmail').value,
+                        phone: document.getElementById('regPhone').value,
+                        nim: document.getElementById('regNIM').value, // Get NIM value
+                        studyProgram: document.getElementById('regStudyProgram').value, // Get selected study program
+                        interest: document.getElementById('regInterest').value,
+                        message: document.getElementById('regMessage').value
+                    };
+                    console.log(formData);
+
+                    // Display success message within the registration modal
+                    registrationMessage.textContent = 'Terima kasih telah mendaftar! Kami akan segera menghubungi Anda.';
+                    registrationMessage.style.color = 'var(--secondary-color)'; // Green color for success
+                    registrationMessage.style.fontWeight = 'bold';
+                    registrationForm.reset(); // Clear the form
+                    // Optionally, hide the form elements and only show the message
+                    // registrationForm.style.display = 'none';
+                });
+            }
+
+            // AI Prompter Functionality
+            const prompterInput = document.getElementById('prompterInput');
+            const sendPrompterBtn = document.getElementById('sendPrompterBtn');
+            const aiResponseArea = document.getElementById('aiResponseArea');
+            const loadingSpinner = sendPrompterBtn.querySelector('.loading-spinner');
+            const sendButtonText = sendPrompterBtn.childNodes[0]; // Get the text node "Hasilkan Jawaban"
+
+            if (sendPrompterBtn) {
+                sendPrompterBtn.addEventListener('click', async () => {
+                    const prompt = prompterInput.value.trim();
+                    if (!prompt) {
+                        aiResponseArea.textContent = "Please enter a topic or keyword to generate a prompt.";
+                        aiResponseArea.classList.add('active');
+                        return;
+                    }
+
+                    // Show loading spinner and disable button
+                    sendButtonText.nodeValue = 'Generating... '; // Update button text
+                    loadingSpinner.style.display = 'inline-block';
+                    sendPrompterBtn.disabled = true;
+                    aiResponseArea.classList.remove('active'); // Hide previous response
+                    aiResponseArea.textContent = "Generating your response..."; // Set temporary text
+
+                    try {
+                        let chatHistory = [];
+                        // Modified prompt to be more general, like a conversational AI
+                        chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                        const payload = { contents: chatHistory };
+                        // API key yang diberikan oleh pengguna
+                        const apiKey = "AIzaSyBls6byIjaR6MsrNjwzp1V_CeAt1EhTGaM";
+                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        const result = await response.json();
+
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            const generatedText = result.candidates[0].content.parts[0].text;
+                            aiResponseArea.textContent = generatedText;
+                        } else {
+                            aiResponseArea.textContent = "Maaf, saya tidak dapat menghasilkan respons. Silakan coba lagi dengan masukan yang berbeda.";
+                        }
+                    } catch (error) {
+                        console.error('Error generating prompt:', error);
+                        aiResponseArea.textContent = "Terjadi kesalahan saat terhubung ke AI. Silakan coba lagi nanti.";
+                    } finally {
+                        // Hide loading spinner and enable button
+                        sendButtonText.nodeValue = 'Hasilkan Jawaban'; // Reset button text
+                        loadingSpinner.style.display = 'none';
+                        sendPrompterBtn.disabled = false;
+                        aiResponseArea.classList.add('active'); // Show the response
+                    }
+                });
+            }
+        });
+
+        // Daftar file gambar kolase (ganti dengan nama file kamu)
+        const heroBackgrounds = [
+            'foto2.jpg',
+            'foto3.jpg',
+            'foto4.jpg',
+        ];
+        let currentBg = 0;
+        const heroSection = document.querySelector('.hero-section');
+
+        function changeHeroBg() {
+            heroSection.style.backgroundImage =
+                `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('${heroBackgrounds[currentBg]}')`;
+            currentBg = (currentBg + 1) % heroBackgrounds.length;
+        }
+
+        // Ganti foto setiap 4 detik
+        setInterval(changeHeroBg, 4000);
+        // Set foto awal saat halaman dimuat
+        changeHeroBg();
+    </script>
+</body>
+</html>
